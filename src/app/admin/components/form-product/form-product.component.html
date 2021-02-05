@@ -39,7 +39,7 @@
       </div>
       <div class="row">
         <div class="col-xs">
-          <img *ngIf="(image$ | async) as image" [src]="image" alt="">
+          <img *ngIf="(image$ | async) as image" [src]="image" alt="" class="image"><br>
           <input type="file" (change)="uploadFile($event)">
         </div>
       </div>

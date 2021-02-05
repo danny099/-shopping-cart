@@ -20,4 +20,7 @@ export class CartService {
     this.products = [...this.products, product];
     this.cart.next(this.products);
   }
+  deleteCart(product: Product) {
+    console.log(this.cart.value.splice(1))
+  }
 }

@@ -1,13 +1,15 @@
 <div *ngIf="product">
-  <div>
-    <img [src]="product.image" alt="">
-  </div>
-  <div>
-    <ul>
-      <li>Nombre: {{ product.title }}</li>
-      <li>Precio: {{ product.price | currency }}</li>
-    </ul>
-    <p>{{ product.description }}</p>
-  </div>
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title><h3 appHighlight>{{ product.title | uppercase }}</h3></mat-card-title>
+      <mat-card-subtitle><strong>{{ product.price | currency }}</strong></mat-card-subtitle>
+    </mat-card-header>
+    <div class="size-image">
+      <img [src]="product.image" alt="">
+    </div>
+    <mat-card-content>
+      <p><strong>Descripcion: </strong> {{ product.description }}</p>
+    </mat-card-content>
+  </mat-card>
 </div>
 

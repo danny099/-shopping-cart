@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  OnInit,
+  OnDestroy
+} from '@angular/core';
 
 import { Observable } from 'rxjs';
 
@@ -13,6 +20,9 @@ import { CartService } from './../../../core/services/cart.service';
 export class OrderComponent implements OnInit {
 
   products$: Observable<Product[]>;
+  displayedColumns: string[] = ['title', 'price', 'image'];
+  @Input() product: Product;
+  @Output() productClicked: EventEmitter<any> = new EventEmitter();
 
   constructor(
     private cartService: CartService
@@ -22,5 +32,6 @@ export class OrderComponent implements OnInit {
 
   ngOnInit() {
   }
+
 
 }

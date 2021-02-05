@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class="card">
   <mat-card-header>
     <mat-card-title><h3 appHighlight>{{ product.title | uppercase }}</h3></mat-card-title>
     <mat-card-subtitle><strong>{{ product.price | currency }}</strong></mat-card-subtitle>
@@ -7,7 +7,7 @@
     <img [src]="product.image" alt="">
   </div>
   <mat-card-content>
-    <p>{{ product.description | slice:0:50 }}</p>
+    <p><strong>Descripcion: </strong> {{ product.description | slice:0:50 }}</p>
   </mat-card-content>
   <mat-card-actions>
     <a mat-raised-button [routerLink]="['/products', product.id]">Ver detalle</a>
